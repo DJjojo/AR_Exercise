@@ -1,13 +1,17 @@
-﻿Der Buildvorgang wurde am 26.04.2016 16:35:07 gestartet.
-     1>Projekt "C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" auf Knoten "2", Build Ziel(e).
+﻿Build started 02.05.2016 00:45:01.
+     1>Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\opencv\opencv\build\x64\vc12\..\..\include\ /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt Sheet_01.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IG:\Uni\AR\opencv\build\x64\vc12\..\..\include\ /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt Sheet_01.cpp
          Sheet_01.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\opencv\opencv\build\x64\vc12\lib opencv_world310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.lib" /MACHINE:X64 x64\Debug\Sheet_01.obj
-         Exercise_1.vcxproj -> C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe
-     1>Die Erstellung des Projekts "C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" ist abgeschlossen, Build Ziel(e).
+     1>Sheet_01.cpp(73): error C3867: 'std::vector<std::vector<cv::Point,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>::at': function call missing argument list; use '&std::vector<std::vector<cv::Point,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>>::at' to create a pointer to member
+                 with
+                 [
+                     _Ty=cv::Point
+                 ]
+     1>Sheet_01.cpp(73): error C2109: subscript requires array or pointer type
+     1>Sheet_01.cpp(73): error C2228: left of '.size' must have class/struct/union
+     1>Done Building Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" (Build target(s)) -- FAILED.
 
-Build erfolgreich.
+Build FAILED.
 
-Verstrichene Zeit 00:00:03.28
+Time Elapsed 00:00:01.29
