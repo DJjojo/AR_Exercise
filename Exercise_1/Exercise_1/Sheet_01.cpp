@@ -24,7 +24,8 @@ void main()
 	int c = 51;
 	int exercise = 1;
 	int numEx  = 2;
-	vector<vector<Point>> contours;
+
+	CvMemStorage* memStorage = cvCreateMemStorage();
 
 	for (;;){
 		
@@ -57,26 +58,60 @@ void main()
 			namedWindow("Sheet_02");
 			Mat frame_02;
 			cap >> frame_02;
-			cvtColor(frame_02, frame_02, CV_BGR2GRAY);
-			adaptiveThreshold(frame_02, frame_02, 140, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 143, 20);
+			Mat frame_02_g, frame_02_gt;
+			cvtColor(frame_02, frame_02_g, CV_BGR2GRAY);
+			adaptiveThreshold(frame_02_g, frame_02_gt, 140, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 143, 20);
 
-			//FindContours
-			vector<vector<Point>> contours_help;			
-			findContours(frame_02, contours_help, RETR_TREE, CHAIN_APPROX_SIMPLE);			
-			contours.resize(contours_help.size());
-			for (int i = 0; i < contours_help.size(); i++){
-				approxPolyDP(Mat(contours_help[i]), contours[i], 5, true);
-			}
+			CvSeq* contours;
+			CvMat frame_02_gt_(frame_02_gt);
 
-			vector<Rect> rects;
-			for (int i = 0; i < contours.size(); i++){
-				if (contours.at[i].size() != 4){
-					rects.push_back(boundingRect(contours.at(i)));
+			cvFindContours(&frame_02_gt_, memStorage, &contours, sizeof(CvContour), CV_RETR_LIST,CV_CHAIN_APPROX_SIMPLE);
+
+			for (; contours; contours = contours->h_next){
+
+				CvSeq* result = cvApproxPoly(contours, sizeof(CvContour), memStorage, CV_POLY_APPROX_DP, cvContourPerimeter(contours)*0.02, 0);
+
+				if (result->total != 4)continue;
+
+				Mat result_ = cvarrToMat(result);
+				Rect r = boundingRect(result_);
+
+				if (r.height<20 || r.width<20 || r.width > frame_02_gt.cols - 10 || r.height > frame_02_gt.rows - 10){
+					continue;
 				}
+
+				const Point *rect = (const Point*)result_.data;
+				int npts = result_.rows;
+
+				polylines(frame_02, &rect, &npts, 1, true, CV_RGB(255, 0, 0), 2, CV_AA, 0);
+
+				float lineParams[16];
+				Mat lineParamsMat(Size(4, 4), CV_32F, lineParams);
+
+				for (int i = 0; i < 4; ++i){
+					circle(frame_02, rect[i], 3, CV_RGB(0, 255, 0), -1);
+
+					double dx = (double)(rect[(i + 1) % 4].x - rect[i].x) / 7.0;
+					double dy = (double)(rect[(i + 1) % 4].y - rect[i].y) / 7.0;
+
+					Point2f points[6];
+
+					for (int j = 1; j < 7; ++j){
+						double px = (double)rect[i].x + (double)j*dx;
+						double py = (double)rect[i].y + (double)j*dy;
+
+						Point p;
+						p.x = (int)px;
+						p.y = (int)py;
+						circle(frame_02, p, 2, CV_RGB(0, 0, 255), -1);
+					}
+
+				}
+
+
 			}
 
-			//DrawContours
-			Scalar color(255, 0, 0);
+			cvClearMemStorage(memStorage);
 			imshow("Sheet_02", frame_02);
 			break;
 		}
@@ -87,5 +122,5 @@ void main()
 		if (waitKey(30) == 'r'){ exercise = ((exercise + 1)%(numEx)); destroyAllWindows(); }//= ((exercise + 1) % exercise_last) + 1;
 		if (waitKey(30) == 27)break;
 	}
-
+	cvReleaseMemStorage(&memStorage);
 }
