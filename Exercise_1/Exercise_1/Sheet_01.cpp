@@ -9,6 +9,21 @@
 using namespace cv;
 using namespace std;
 
+int subpixSampleSafe(const cv::Mat &pSrc, const Point2f &p){
+	int x = int(floorf(p.x));
+	int y = int(floorf(p.y));
+	if (x < 0 || x >= pSrc.cols - 1 || y < 0 || y >= pSrc.rows - 1) return 127;
+
+	int dx = int(256 * (p.x - floorf(p.x)));
+	int dy = int(256 * (p.y - floorf(p.y)));
+
+	unsigned char* i = (unsigned char*) ((pSrc.data + y*pSrc.step) + x);
+	int a = i[0] + ((dx * (i[1] - i[0])) >> 8);
+	i += pSrc.step;
+	int b = i[0] + ((dx*(i[1] - i[0])) >> 8);
+	return a + ((dy * (b - a)) >> 8);
+}
+
 void main()
 {
 	
@@ -56,6 +71,8 @@ void main()
 		{
 			//Greyscale
 			namedWindow("Sheet_02");
+			namedWindow("Stripe");
+			bool isFirstStripe = true;
 			Mat frame_02;
 			cap >> frame_02;
 			Mat frame_02_g, frame_02_gt;
@@ -76,7 +93,7 @@ void main()
 				Mat result_ = cvarrToMat(result);
 				Rect r = boundingRect(result_);
 
-				if (r.height<20 || r.width<20 || r.width > frame_02_gt.cols - 10 || r.height > frame_02_gt.rows - 10){
+				if (r.height<40 || r.width<40 || r.width > frame_02_gt.cols - 10 || r.height > frame_02_gt.rows - 10){
 					continue;
 				}
 
@@ -96,6 +113,26 @@ void main()
 
 					Point2f points[6];
 
+					int stripeLength = (int)(0.8*sqrt(dx*dx + dy*dy));
+					if (stripeLength < 5)stripeLength = 5;
+					stripeLength |= 1;
+					cv::Size stripeSize;
+					stripeSize.width = 3;
+					stripeSize.height = stripeLength;
+
+					int nStop = stripeLength >>1;
+					int nStart = -nStop;
+
+					cv::Point2f stripeVecX;
+					cv::Point2f stripeVecY;
+					double diffLength = sqrt(dx*dx + dy*dy);
+					stripeVecX.x = dx / diffLength;
+					stripeVecX.y = dy / diffLength;
+					stripeVecY.x = stripeVecX.y;
+					stripeVecY.y = -stripeVecX.x;
+
+
+					Mat iplStripe(stripeSize, CV_8UC1);
 					for (int j = 1; j < 7; ++j){
 						double px = (double)rect[i].x + (double)j*dx;
 						double py = (double)rect[i].y + (double)j*dy;
@@ -103,7 +140,74 @@ void main()
 						Point p;
 						p.x = (int)px;
 						p.y = (int)py;
-						circle(frame_02, p, 2, CV_RGB(0, 0, 255), -1);
+						//circle(frame_02, p, 2, CV_RGB(0, 0, 255), -1);
+
+						for (int m = -1; m <= 1; ++m){
+							for (int n = nStart; n <= nStop; ++n){
+								Point2f subPixel;
+								subPixel.x = (double)p.x + (double)m*stripeVecX.x + (double)n*stripeVecY.x;
+								subPixel.y = (double)p.y + (double)m*stripeVecX.y + (double)n*stripeVecY.y;
+
+								Point p2;
+								p2.x = (int)subPixel.x;
+								p2.y = (int)subPixel.y;
+								if (isFirstStripe)
+									circle(frame_02, p2, 1, CV_RGB(255, 0, 255), -1);
+								else
+									circle(frame_02, p2, 1, CV_RGB(0, 255, 255), -1);
+
+								int pixel = subpixSampleSafe(frame_02_g, subPixel);
+								int w = m + 1;
+								int h = n + (stripeLength >> 1);
+								
+								iplStripe.at<uchar>(h, w) = (uchar)pixel;
+							}
+						}
+
+						//--ApplySobelOperator--
+						vector<double> sobelVals(stripeLength-2);
+						for (int k = 1; k < stripeLength-1; k++){
+							unsigned char* stripePtr = &(iplStripe.at<uchar>(k - 1, 0));
+							double r1 = -stripePtr[0] - 2 * stripePtr[1] - stripePtr[2];
+							stripePtr += 2 * iplStripe.step;
+							double r3 = stripePtr[0] + 2 * stripePtr[1] + stripePtr[2];
+							sobelVals[k - 1] = r1 + r3;
+
+						}
+						
+						double maxVal = -1;
+						int maxIndex = 0;
+						for (int n = 0; n < stripeLength - 2; ++n){
+							if (sobelVals[n] > maxVal){
+								maxVal = sobelVals[n];
+								maxIndex = n;
+							}
+						}
+
+						double y0, y1, y2;
+						y0 = (maxIndex <= 0) ? 0 : sobelVals[maxIndex - 1];
+						y1 = sobelVals[maxIndex];
+						y2 = (maxIndex >= stripeLength - 3) ? 0 : sobelVals[maxIndex + 1];
+
+						double pos = (y2 - y0) / (4 * y1 - 2 * y0 - 2 * y2);
+
+						if (pos != pos)continue;
+
+						Point2f edgeCenter;
+						int maxIndexShift = maxIndex - (stripeLength >> 1);
+
+						edgeCenter.x = (double)p.x + (((double)maxIndexShift + pos)*stripeVecY.x);
+						edgeCenter.y = (double)p.y + (((double)maxIndexShift + pos)*stripeVecY.y);
+						
+						circle(frame_02, edgeCenter, 1, CV_RGB(255, 0, 0));
+
+						if (isFirstStripe){
+							Mat iplTmp;
+							resize(iplStripe, iplTmp, Size(100, 300));
+							imshow("Stripe", iplTmp);
+							isFirstStripe = false;
+						}
+
 					}
 
 				}
@@ -113,6 +217,7 @@ void main()
 
 			cvClearMemStorage(memStorage);
 			imshow("Sheet_02", frame_02);
+			isFirstStripe = true;
 			break;
 		}
 		default:
