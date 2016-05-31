@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Exercise_solution.cpp" />
     <ClCompile Include="Sheet_01.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

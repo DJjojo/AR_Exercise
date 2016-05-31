@@ -1,19 +1,9 @@
-﻿Der Buildvorgang wurde am 23.05.2016 17:34:08 gestartet.
-     1>Projekt "C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" auf Knoten "2", Build Ziel(e).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IC:\opencv\opencv\build\x64\vc12\..\..\include\ /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt Sheet_01.cpp
-         Sheet_01.cpp
-     1>Sheet_01.cpp(129): warning C4244: '=': Konvertierung von 'double' in 'float', möglicher Datenverlust
-     1>Sheet_01.cpp(130): warning C4244: '=': Konvertierung von 'double' in 'float', möglicher Datenverlust
-     1>Sheet_01.cpp(148): warning C4244: '=': Konvertierung von 'double' in 'float', möglicher Datenverlust
-     1>Sheet_01.cpp(149): warning C4244: '=': Konvertierung von 'double' in 'float', möglicher Datenverlust
-     1>Sheet_01.cpp(199): warning C4244: '=': Konvertierung von 'double' in 'float', möglicher Datenverlust
-     1>Sheet_01.cpp(200): warning C4244: '=': Konvertierung von 'double' in 'float', möglicher Datenverlust
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\opencv\opencv\build\x64\vc12\lib opencv_world310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.lib" /MACHINE:X64 x64\Debug\Sheet_01.obj
-         Exercise_1.vcxproj -> C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe
-     1>Die Erstellung des Projekts "C:\Users\DJjojo\Desktop\Übungen\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" ist abgeschlossen, Build Ziel(e).
+﻿Build started 31.05.2016 12:56:22.
+     1>Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Exercise_1.vcxproj -> G:\Uni\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe
+     1>Done Building Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" (Build target(s)).
 
-Build erfolgreich.
+Build succeeded.
 
-Verstrichene Zeit 00:00:07.81
+Time Elapsed 00:00:00.03
