@@ -1,30 +1,25 @@
-﻿Build started 31.05.2016 12:54:19.
+﻿Build started 06.06.2016 19:07:16.
      1>Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IG:\Uni\AR\opencv\build\x64\vc12\..\..\include\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Exercise_solution.cpp Sheet_01.cpp
-         Sheet_01.cpp
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\sheet_01.cpp(129): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\sheet_01.cpp(130): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\sheet_01.cpp(148): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\sheet_01.cpp(149): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\sheet_01.cpp(199): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\sheet_01.cpp(200): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-         Exercise_solution.cpp
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(180): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(181): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(208): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(209): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(286): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(287): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(362): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\exercise_solution.cpp(363): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IG:\Uni\AR\opencv\build\x64\vc12\..\..\include\ /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt OpenCV_testing.cpp PoseEstimation.cpp
+         PoseEstimation.cpp
+         OpenCV_testing.cpp
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(178): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(179): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(206): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(207): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(284): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(285): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(357): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(358): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>g:\uni\ar\ar_exercise\exercise_1\exercise_1\opencv_testing.cpp(489): warning C4305: 'argument' : truncation from 'double' to 'float'
          Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\Exercise_1.exe" /INCREMENTAL /NOLOGO /LIBPATH:G:\Uni\AR\opencv\build\x64\vc12\lib opencv_world310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\Exercise_1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\Exercise_1.lib" /MACHINE:X64 Debug\Exercise_solution.obj
-         Debug\Sheet_01.obj
-     1>Debug\Exercise_solution.obj : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\Exercise_1.exe" /INCREMENTAL /NOLOGO /LIBPATH:G:\Uni\AR\opencv\build\x64\vc12\lib opencv_world310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\Exercise_1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\Exercise_1.lib" /MACHINE:X64 Debug\OpenCV_testing.obj
+         Debug\PoseEstimation.obj
+     1>Debug\OpenCV_testing.obj : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
      1>Done Building Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:06.94
+Time Elapsed 00:00:01.46

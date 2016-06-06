@@ -19,8 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Exercise_solution.cpp" />
-    <ClCompile Include="Sheet_01.cpp" />
+    <ClCompile Include="OpenCV_testing.cpp" />
+    <ClCompile Include="PoseEstimation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PoseEstimation.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F4DC9A4A-9602-4EF9-92F0-6296282097ED}</ProjectGuid>

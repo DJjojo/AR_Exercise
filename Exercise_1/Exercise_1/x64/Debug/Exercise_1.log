@@ -1,9 +1,23 @@
-﻿Build started 31.05.2016 12:56:22.
+﻿Build started 06.06.2016 19:07:24.
      1>Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IG:\Uni\AR\opencv\build\x64\vc12\..\..\include\ /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt OpenCV_testing.cpp
+         OpenCV_testing.cpp
+     1>OpenCV_testing.cpp(178): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(179): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(206): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(207): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(284): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(285): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(357): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(358): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>OpenCV_testing.cpp(489): warning C4305: 'argument' : truncation from 'double' to 'float'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Uni\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe" /INCREMENTAL /NOLOGO /LIBPATH:G:\Uni\AR\opencv\build\x64\vc12\lib opencv_world310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\Uni\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Uni\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.lib" /MACHINE:X64 x64\Debug\OpenCV_testing.obj
+         x64\Debug\PoseEstimation.obj
          Exercise_1.vcxproj -> G:\Uni\AR\AR_Exercise\Exercise_1\x64\Debug\Exercise_1.exe
      1>Done Building Project "G:\Uni\AR\AR_Exercise\Exercise_1\Exercise_1\Exercise_1.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:00.97

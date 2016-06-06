@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30324.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercise_1", "Exercise_1\Exercise_1.vcxproj", "{F4DC9A4A-9602-4EF9-92F0-6296282097ED}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGL_Testing", "OGL_Testing\OGL_Testing.vcxproj", "{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -27,6 +29,17 @@ Global
 		{F4DC9A4A-9602-4EF9-92F0-6296282097ED}.Release|Win32.Build.0 = Release|Win32
 		{F4DC9A4A-9602-4EF9-92F0-6296282097ED}.Release|x64.ActiveCfg = Release|x64
 		{F4DC9A4A-9602-4EF9-92F0-6296282097ED}.Release|x64.Build.0 = Release|x64
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Debug|Win32.Build.0 = Debug|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Debug|x64.ActiveCfg = Debug|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Debug|x64.Build.0 = Debug|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Release|Win32.ActiveCfg = Release|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Release|Win32.Build.0 = Release|Win32
+		{ED732535-3E6B-46D5-8BCB-C31903C5AFDA}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
