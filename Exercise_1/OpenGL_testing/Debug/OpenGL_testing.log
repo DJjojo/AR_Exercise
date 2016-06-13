@@ -1,0 +1,12 @@
+﻿Build started 06.06.2016 18:53:48.
+     1>Project "G:\Uni\AR\AR_Exercise\Exercise_1\OpenGL_testing\OpenGL_testing.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\OpenGL_testing.exe" /INCREMENTAL /NOLOGO /LIBPATH:G:\Uni\AR\opencv\build\x64\vc12\lib /LIBPATH:G:\Uni\AR\glfw\lib opengl32.lib opencv_world310d.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\OpenGL_testing.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Uni\AR\AR_Exercise\Exercise_1\Debug\OpenGL_testing.lib" /MACHINE:X86 Debug\OGL_testing.obj
+     1>OGL_testing.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
+     1>OGL_testing.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function _main
+     1>G:\Uni\AR\AR_Exercise\Exercise_1\Debug\OpenGL_testing.exe : fatal error LNK1120: 2 unresolved externals
+     1>Done Building Project "G:\Uni\AR\AR_Exercise\Exercise_1\OpenGL_testing\OpenGL_testing.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.14
